@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="app.tsd.googleTest">
+      <class name="app.tsd.blazeTest">
         <methods>
           <include name="closeDriver"/>
           <include name="test"/>
           <include name="setupClases"/>
           <include name="setupDriver"/>
         </methods>
-      </class> <!-- app.tsd.googleTest -->
+      </class> <!-- app.tsd.blazeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
