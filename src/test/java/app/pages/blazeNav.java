@@ -14,22 +14,22 @@ public class blazeNav {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "(//a[@href='index.html'])[2]")
+	@FindBy(xpath = "//ul/li/a[contains(text(),'Home')]")
 	private WebElement home;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//ul/li/a[contains(text(),'Contact')]")
 	private WebElement contact;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//ul/li/a[contains(text(),'About us")
 	private WebElement aboutUs;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//ul/li/a[contains(text(),'Cart')]")
 	private WebElement cart;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//ul/li/a[contains(text(),'Log in')]")
 	private WebElement login;
 	
-	@FindBy(xpath = "")
+	@FindBy(id = "signin2")
 	private WebElement signUp;
 	
 	
