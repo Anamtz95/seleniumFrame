@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 
+import com.sun.tools.javac.util.Assert;
+
 
 public class blazeProduct {
 WebDriver driver; 
@@ -35,6 +37,14 @@ WebDriver driver;
 
 	
 	//Methods
+	/*public void clickCustomerLoginButton() {
+		Assert.assertTrue(waits.waitForVisibilityOfElement(customerLoginBtn, MID_WAIT));
+		jsf.shadeElem(customerLoginBtn);
+		log.info("Customer Login button is displayed");
+		selact.clickOnElement(customerLoginBtn);
+		log.info("Customer Login button has been clicked");
+	}*/
+	
 	public void details(String xpath) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));

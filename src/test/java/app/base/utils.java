@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class utils {
+	
 	public static void writeInput(WebDriver driver, WebElement element, String value){
 		try {
 			element.sendKeys(value);	

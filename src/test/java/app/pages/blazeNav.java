@@ -5,8 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import app.base.utils;
 
-public class blazeNav {
+
+public class blazeNav extends utils {
 	WebDriver driver;
 	
 	public blazeNav(WebDriver driver) {
@@ -33,4 +35,18 @@ public class blazeNav {
 	private WebElement signUp;
 	
 	
+	public void navegate(String place) {
+		
+		if(place == "home") {
+			home.click();
+		}else if(place == "contacto") {
+			contact.click();
+		}else if(place == "carrito") {
+			cart.click();
+		}else if(place == "log") {
+			login.click();
+		}else if(place == "sign") {
+			signUp.click();
+		}
+	}
 }
