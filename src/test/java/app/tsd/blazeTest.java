@@ -10,12 +10,15 @@ import app.base.baseTest;
 import app.pages.blazeHome;
 import app.pages.blazeNav;
 import app.pages.blazeProduct;
+import app.pages.blazeCart;
 
 public class blazeTest extends baseTest{
 	
 	public blazeHome home;
 	public blazeProduct product;
 	public blazeNav nav;
+	public blazeCart cart;
+	
 	
 	
 	@BeforeClass
@@ -23,6 +26,7 @@ public class blazeTest extends baseTest{
 		home = new blazeHome(driver);
 		product = new blazeProduct(driver);
 		nav = new blazeNav(driver);
+		cart = new blazeCart(driver);
 	}
 	
 	@Test
