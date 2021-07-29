@@ -29,38 +29,28 @@ public class blazeTest extends baseTest{
 		cart = new blazeCart(driver);
 	}
 	
-	@Test
-	/*public void test() throws InterruptedException {
-		//Step 1 Sign UP
-				nav.navegate("sign");
-				home.signUp("testA", "12345");
-		//Step 2 LogIn
-				nav.navegate("log");
-				home.logIn("testA", "12345");
-		//Step 3 select product
-				product.details("//h4//a[@href='prod.html?idp_=1']");
-		//Step 4 add product
-				product.add();
-	}*/
+	/*@Test(priority=1)
 	public void signUp() throws InterruptedException{
 		//Step 1 Sign UP
 		nav.navegate("sign");
 		home.signUp("test", "12345");
-	}
+	}*/
 	
-	@Test
-	public void logIn() {
+	@Test(priority=1)
+	public void logIn() throws Exception {
 		nav.navegate("log");
-		home.logIn("test", "12345");
+		home.logIn("pruebados", "123");
 	}
 	
-	@Test
-	public void addCart() {
+	@Test(priority=2)
+	public void addCart() throws Exception {
 		//Step 1 Select Product
 		product.details("//h4//a[@href='prod.html?idp_=1']");
 		
 		//Step2 add to car
 		product.add();
+		//Step 3 back to home
+		nav.navegate("home");
 	}
 
 }

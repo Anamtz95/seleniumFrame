@@ -6,8 +6,8 @@
       <class name="app.tsd.blazeTest">
         <methods>
           <include name="closeDriver"/>
-          <include name="test"/>
           <include name="setupClases"/>
+          <include name="logIn"/>
           <include name="setupDriver"/>
         </methods>
       </class> <!-- app.tsd.blazeTest -->

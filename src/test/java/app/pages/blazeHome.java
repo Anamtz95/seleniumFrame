@@ -52,7 +52,7 @@ public class blazeHome {
 	}
 	
 	
-	public void signUp(String user, String pass) throws InterruptedException {
+	public void signUp(String user, String pass) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='sign-username']")));
 		method.writeInput(driver, userSign, user);
@@ -60,6 +60,9 @@ public class blazeHome {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='sign-password']")));
 		method.writeInput(driver, passSign, pass);
 		
+		method.takeSnapShot(driver, "./ScreenShot_Folder/Test1_SignUp.png");
+		
+		Thread.sleep(2000);
 		method.click(driver, btnSign);
 		
 		Thread.sleep(3000);
@@ -67,16 +70,21 @@ public class blazeHome {
 		System.out.println("Step1- SignUP");
 	}
 	
-	public void logIn(String user, String pass) {
+	public void logIn(String user, String pass) throws Exception {
+		
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='loginusername']")));
 		method.writeInput(driver, userLog, user);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='loginpassword']")));
 		method.writeInput(driver, passLog, pass);
+		method.takeSnapShot(driver, "./ScreenShot_Folder/Test1_Login.png");
 		
+		Thread.sleep(2000);
 		method.click(driver, btnLog);
+		Thread.sleep(3000);
+		//method.takeSnapShot(driver, "C:/Pictures/Test.png");
 		
-		System.out.println("Step1- SignUP");
+		System.out.println("Step1- LogIn");
 	}
 }

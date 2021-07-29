@@ -11,11 +11,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 
-import com.sun.tools.javac.util.Assert;
+import app.base.utils;
+
 
 
 public class blazeProduct {
 WebDriver driver; 
+public utils method;
 	
 	public blazeProduct(WebDriver drive) {
 		this.driver = drive;
@@ -37,13 +39,6 @@ WebDriver driver;
 
 	
 	//Methods
-	/*public void clickCustomerLoginButton() {
-		Assert.assertTrue(waits.waitForVisibilityOfElement(customerLoginBtn, MID_WAIT));
-		jsf.shadeElem(customerLoginBtn);
-		log.info("Customer Login button is displayed");
-		selact.clickOnElement(customerLoginBtn);
-		log.info("Customer Login button has been clicked");
-	}*/
 	
 	public void details(String xpath) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
@@ -52,10 +47,13 @@ WebDriver driver;
 		System.out.println("test-succesfully");
 	}
 	
-	public void add() {
+	public void add() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Add to cart']")));
 		addBtn.click();
+		method.takeSnapShot(driver, "./ScreenShot_Folder/Test1_AddCart.png");
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
 		System.out.println("test-succesfully");
 	}
 	
