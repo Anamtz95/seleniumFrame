@@ -17,7 +17,7 @@ public class utils {
 		try {
 			element.sendKeys(value);	
 		}catch(Exception e){
-			System.out.println("No hay de esos");
+			System.out.println("No existe el input");
 			driver.quit();
 		}
 
@@ -27,7 +27,7 @@ public class utils {
 		try {
 			element.click();
 		}catch(Exception e) {
-			System.out.println("No hay esa opcion");
+			System.out.println("No puede realizar esa opcion");
 			driver.quit();
 		}
 	}
