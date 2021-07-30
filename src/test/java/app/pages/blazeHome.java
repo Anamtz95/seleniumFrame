@@ -87,15 +87,8 @@ public class blazeHome extends utils{
 		writeInput(driver, passLog, pass);
 		takeSnapShot(driver, "./ScreenShot_Folder/Test1_Login.png");
 		
-		Thread.sleep(2000);
 		click(driver, btnLog);
 		
-//		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-//		if(wait.until(ExpectedConditions.alertIsPresent()) != null) {
-//			System.out.println("Hay alert");
-//		}else {
-//			System.out.println("No hay alert");
-//		}
 		try {
 			Alert alert;
 			alert = driver.switchTo().alert(); 

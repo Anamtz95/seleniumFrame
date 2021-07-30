@@ -6,6 +6,8 @@
       <class name="app.tsd.blazeTest">
         <methods>
           <include name="closeDriver"/>
+          <include name="addCart"/>
+          <include name="purchaseOrder"/>
           <include name="setupClases"/>
           <include name="logIn"/>
           <include name="setupDriver"/>

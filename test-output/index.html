@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\ana.martinezm\AppData\Local\Temp\testng-eclipse-296977426\testng-customsuite.xml</span>
+                    <span>C:\Users\mauricio.neira\AppData\Local\Temp\testng-eclipse-1007131435\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -110,6 +110,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="app.tsd.blazeTest" class="method navigator-link" hash-for-method="logIn">logIn</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="app.tsd.blazeTest" class="method navigator-link" hash-for-method="purchaseOrder">purchaseOrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -144,12 +149,19 @@
                   <span class="method-name">logIn</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="purchaseOrder">
+                  </a> <!-- purchaseOrder -->
+                  <span class="method-name">purchaseOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ana.martinezm\AppData\Local\Temp\testng-eclipse-296977426\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\mauricio.neira\AppData\Local\Temp\testng-eclipse-1007131435\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -198,20 +210,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'logIn')
+data.setCell(0, 1, 'addCart')
 data.setCell(0, 2, 'app.tsd.blazeTest')
-data.setCell(0, 3, 6117);
+data.setCell(0, 3, 4356);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'addCart')
+data.setCell(1, 1, 'purchaseOrder')
 data.setCell(1, 2, 'app.tsd.blazeTest')
-data.setCell(1, 3, 2902);
+data.setCell(1, 3, 2242);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'logIn')
+data.setCell(2, 2, 'app.tsd.blazeTest')
+data.setCell(2, 3, 1047);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -244,19 +260,23 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setupClases</span>
-                <span class="method-start">2559 ms</span>
+                <span class="method-start">2601 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">logIn</span>
-                <span class="method-start">2588 ms</span>
+                <span class="method-start">56031 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">addCart</span>
-                <span class="method-start">8709 ms</span>
+                <span class="method-start">57081 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">purchaseOrder</span>
+                <span class="method-start">61438 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">closeDriver</span>
-                <span class="method-start">11614 ms</span>
+                <span class="method-start">63682 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

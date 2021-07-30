@@ -36,7 +36,8 @@ public class blazeProduct extends utils{
 	}
 	
 	//Methods
-	public void details(String xpath) {
+	public void details(String xpath) throws InterruptedException {
+		Thread.sleep(1000);
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 		driver.findElement(By.xpath(xpath)).click();
@@ -48,6 +49,7 @@ public class blazeProduct extends utils{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Add to cart']")));
 		addBtn.click();
 		takeSnapShot(driver, "./ScreenShot_Folder/Test1_AddCart.png");
+		
 		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		System.out.println("test-succesfully");

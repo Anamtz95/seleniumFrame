@@ -5,9 +5,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 public abstract class baseTest {
 	
 	public WebDriver driver;
+	
+	public ExtentSparkReporter htmlReporter = new ExtentSparkReporter("extentReport.html");
+	public ExtentReports extent = new ExtentReports();
 	
 	@BeforeTest
 	public void setupDriver() throws InterruptedException {
@@ -17,12 +23,12 @@ public abstract class baseTest {
 				driver = new ChromeDriver();
 				driver.get("https://www.demoblaze.com");
 				driver.manage().window().maximize();
-//				Thread.sleep(2000);
+				extent.attachReporter(htmlReporter);
 	}
-	
 	
 	@AfterTest
 	public void closeDriver() {
+		extent.flush();
 		driver.quit();
 	}
 
