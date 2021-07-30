@@ -15,9 +15,8 @@ import app.base.utils;
 
 
 
-public class blazeProduct {
-WebDriver driver; 
-public utils method;
+public class blazeProduct extends utils{
+	WebDriver driver; 
 	
 	public blazeProduct(WebDriver drive) {
 		this.driver = drive;
@@ -36,10 +35,7 @@ public utils method;
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	}
 	
-
-	
 	//Methods
-	
 	public void details(String xpath) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
@@ -51,7 +47,7 @@ public utils method;
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Add to cart']")));
 		addBtn.click();
-		method.takeSnapShot(driver, "./ScreenShot_Folder/Test1_AddCart.png");
+		takeSnapShot(driver, "./ScreenShot_Folder/Test1_AddCart.png");
 		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		System.out.println("test-succesfully");

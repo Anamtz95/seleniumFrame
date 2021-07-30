@@ -2,7 +2,8 @@ package app.pages;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,11 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import app.base.utils;
 
-public class blazeHome {
-
-	WebDriver driver; 
-	public utils method;
-	
+public class blazeHome extends utils{
+	WebDriver driver; 	
 	
 	public blazeHome(WebDriver drive) {
 		this.driver = drive;
@@ -54,37 +52,62 @@ public class blazeHome {
 	
 	public void signUp(String user, String pass) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='sign-username']")));
-		method.writeInput(driver, userSign, user);
+		wait.until(ExpectedConditions.visibilityOf(userSign));
+		writeInput(driver, userSign, user);
+		writeInput(driver, passSign, pass);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='sign-password']")));
-		method.writeInput(driver, passSign, pass);
-		
-		method.takeSnapShot(driver, "./ScreenShot_Folder/Test1_SignUp.png");
+		takeSnapShot(driver, "./ScreenShot_Folder/Test1_SignUp.png");
 		
 		Thread.sleep(2000);
-		method.click(driver, btnSign);
+		click(driver, btnSign);
 		
-		Thread.sleep(3000);
-		driver.switchTo().alert().accept();
+		try {
+			WebDriverWait waitAlert = new WebDriverWait(driver, 3);
+			waitAlert.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert(); 
+			String alertTxt = alert.getText();
+			System.out.println(alertTxt);
+			if(alertTxt.contains("exist")) {
+				alert.dismiss();
+				driver.quit();
+			}else {
+				alert.accept();
+			}			
+		}catch(NoAlertPresentException E) {
+			System.out.println("No se encontró un alert");
+		}
 		System.out.println("Step1- SignUP");
 	}
 	
 	public void logIn(String user, String pass) throws Exception {
 		
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='loginusername']")));
-		method.writeInput(driver, userLog, user);
-		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='loginpassword']")));
-		method.writeInput(driver, passLog, pass);
-		method.takeSnapShot(driver, "./ScreenShot_Folder/Test1_Login.png");
+		WebDriverWait wait = new WebDriverWait(driver,5);
+		wait.until(ExpectedConditions.visibilityOf(userLog));
+		writeInput(driver, userLog, user);
+		writeInput(driver, passLog, pass);
+		takeSnapShot(driver, "./ScreenShot_Folder/Test1_Login.png");
 		
 		Thread.sleep(2000);
-		method.click(driver, btnLog);
-		Thread.sleep(3000);
-		//method.takeSnapShot(driver, "C:/Pictures/Test.png");
+		click(driver, btnLog);
 		
+//		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+//		if(wait.until(ExpectedConditions.alertIsPresent()) != null) {
+//			System.out.println("Hay alert");
+//		}else {
+//			System.out.println("No hay alert");
+//		}
+		try {
+			Alert alert;
+			alert = driver.switchTo().alert(); 
+			if(driver.equals(alert)) {
+				String alertTxt = alert.getText();
+				System.out.println(alertTxt);
+				alert.accept();			
+				driver.quit();
+			}
+		}catch(NoAlertPresentException e) {
+			System.out.println("Logged in Successfully");
+		}			
 		System.out.println("Step1- LogIn");
 	}
 }

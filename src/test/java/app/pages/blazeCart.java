@@ -48,7 +48,7 @@ public class blazeCart {
 	@FindBy(xpath = "//*[@id='orderModal']/div/div/div[3]/button[1]")
 	private WebElement btnClose;
 	
-	@FindBy(xpath = "//*[@class='sweet-alert  showSweetAlert visible']/div[7]/button")
+	@FindBy(xpath = "//div['sweet-alert  showSweetAlert visible']//button[@class='confirm btn btn-lg btn-primary']")
 	private WebElement btnConfirm;
 		
 		
@@ -82,7 +82,7 @@ public class blazeCart {
 	
 	public void Confirm() {
 		WebDriverWait wait = new WebDriverWait(driver,300);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='sweet-alert  showSweetAlert visible']/div[7]/button")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='sweet-alert  showSweetAlert visible']//button[@class='confirm btn btn-lg btn-primary']")));
 		btnConfirm.click();
 		System.out.println("test-succesfully");
 	}
@@ -90,6 +90,7 @@ public class blazeCart {
 	public void Close() {
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='orderModal']/div/div/div[3]/button[1]")));
+		
 		btnClose.click();
 		System.out.println("test-succesfully");
 	}
