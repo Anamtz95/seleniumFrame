@@ -68,7 +68,7 @@ public class blazeTest extends baseTest {
 		nav.navegate("log");
 		testReport.pass("Click on NavBar option Log In");
 
-		home.logIn(/*obj.Customer.Username*/"mauriciotest", "12345");
+		home.logIn(data.User.Username, data.User.Password);
 		testReport.pass("Logged In");
 		testReport.log(Status.INFO, "Test LOG IN finalized");
 	}
