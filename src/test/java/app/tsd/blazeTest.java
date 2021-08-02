@@ -44,7 +44,7 @@ public class blazeTest extends baseTest {
 		
 		//Read JSON File
 		JSONParser jsonParser = new JSONParser();
-		FileReader reader = new FileReader("C:\\Users\\mauricio.neira\\Desktop\\Room3_Workshop 7_26_21\\data.json");
+		FileReader reader = new FileReader("C:\\Users\\ana.martinezm\\Desktop\\Room3_Workshop 7_26_21\\data.json");
 		obj = jsonParser.parse(reader);
 		
 		ObjectMapper objectMapper = new ObjectMapper();
@@ -80,7 +80,7 @@ public class blazeTest extends baseTest {
 			// Step 1 Select Product
 			testReport.log(Status.INFO, "Test Add Cart initiated.");
 			
-			product.details("//h4//a[@href='prod.html?idp_=1']");
+			product.details(data.Order.Product.Name);
 			testReport.pass("Click on product");
 
 			// Step2 add to car

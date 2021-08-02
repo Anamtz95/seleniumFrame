@@ -36,7 +36,12 @@ public class blazeProduct extends utils{
 	}
 	
 	//Methods
-	public void details(String xpath) throws InterruptedException {
+	public void details(String producto) throws InterruptedException {
+		////*[@class='hrefch' and contains(text(),'Samsung galaxy s6')]
+		String xpath = "//*[@class='hrefch' and contains(text(),'";
+		xpath = xpath + producto;
+		xpath = xpath + "')]";
+		System.out.println(xpath);
 		Thread.sleep(1000);
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
